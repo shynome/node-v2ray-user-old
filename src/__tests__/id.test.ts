@@ -1,8 +1,9 @@
 import { newAlterUUIDs } from '../id'
 import fse from 'fs-extra'
+import { testUUID } from "./common";
 
 describe('id', () => {
-  const testUUID = 'e9a4f695-63e9-4f6f-9bf1-610e9708f69c'
+
   it('newAlterUUIDs', async () => {
     const count = 16
     let alterUUIDs = await newAlterUUIDs(testUUID, count)
