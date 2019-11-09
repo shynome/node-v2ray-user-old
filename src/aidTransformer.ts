@@ -1,9 +1,9 @@
 export const aidTransformer = {
-  to(val: Buffer[]) {
+  to(val: Uint8Array[]) {
     return Buffer.concat(val)
   },
-  from(val: Buffer): Buffer[] {
-    let arr: Buffer[] = []
+  from(val: Uint8Array): Uint8Array[] {
+    let arr: Uint8Array[] = []
     for (let i = 0, p = 0; i < val.length;) {
       i += 16
       arr.push(val.slice(p, i))

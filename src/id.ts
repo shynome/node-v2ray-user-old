@@ -1,14 +1,14 @@
 import UUID from "pure-uuid";
 import { createHash, Hash } from "crypto";
 
-export async function newAlterUUIDs(uuid: string, alterIDCount: number): Promise<Uint8Array> {
-  let alterUUIDs = Buffer.from([])
-  let prevID = new Uint8Array(new UUID(4).parse(uuid).export())
-  alterUUIDs = Buffer.concat([alterUUIDs, prevID])
+export async function newAlterUUIDs(uuid: string, alterIDCount: number): Promise<Uint8Array[]> {
   alterIDCount = alterIDCount + 1
+  let alterUUIDs = new Array(alterIDCount)
+  let prevID = new Uint8Array(new UUID(4).parse(uuid).export())
+  alterUUIDs[0] = prevID
   for (let i = 1; i < alterIDCount; i++) {
     let newID = await NextUUID(prevID)
-    alterUUIDs = Buffer.concat([alterUUIDs, newID])
+    alterUUIDs[i] = newID
     prevID = newID
   }
   return alterUUIDs
