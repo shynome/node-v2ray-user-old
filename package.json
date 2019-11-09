@@ -30,9 +30,11 @@
   },
   "homepage": "https://github.com/shynome/node-v2ray-user#readme",
   "devDependencies": {
+    "@types/fs-extra": "^8.0.1",
     "@types/jest": "^24.0.22",
     "@types/node": "^12.12.7",
     "@types/node-int64": "^0.4.29",
+    "fs-extra": "^8.1.0",
     "jest": "^24.9.0",
     "ts-jest": "^24.1.0",
     "typescript": "^3.7.2"
