@@ -1,0 +1,43 @@
+{
+  "name": "@shynome/node-v2ray-user",
+  "version": "0.0.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "v2ray user for node",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "pretest": "npm run build",
+    "test": "jest",
+    "clean": "rm -rf dist",
+    "prebuild": "npm run clean",
+    "build": "tsc",
+    "preversion": "npm test",
+    "postversion": "git push --follow-tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shynome/node-v2ray-user.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shynome/node-v2ray-user/issues"
+  },
+  "homepage": "https://github.com/shynome/node-v2ray-user#readme",
+  "devDependencies": {
+    "@types/jest": "^24.0.22",
+    "@types/node": "^12.12.7",
+    "@types/node-int64": "^0.4.29",
+    "jest": "^24.9.0",
+    "ts-jest": "^24.1.0",
+    "typescript": "^3.7.2"
+  },
+  "dependencies": {
+    "pure-uuid": "^1.5.7"
+  }
+}
